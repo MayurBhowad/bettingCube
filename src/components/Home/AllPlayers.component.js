@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 
 import { getAllPlayer, selectPlayer, removePlayer } from '../../redux/actions/players.action';
+import Spinner from '../common/Spinner.common';
 
 export class AllPlayers extends Component {
 
@@ -75,7 +76,7 @@ export class AllPlayers extends Component {
 
         let playersRow;
         if (players === null || loading) {
-            playersRow = (<h1>loading</h1>)
+            playersRow = <Spinner />
         } else {
             if (players) {
                 if (players.length > 0) {
@@ -87,7 +88,7 @@ export class AllPlayers extends Component {
                 }
             }
             else {
-                playersRow = <h4>No product found...</h4>
+                playersRow = <h4>No players found...</h4>
             }
         }
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Spinner from '../common/Spinner.common';
 
 export class SelectedPlayer extends Component {
     render() {
@@ -10,7 +11,7 @@ export class SelectedPlayer extends Component {
 
         let rowData;
         if (selected_player === null || loading) {
-            rowData = (<h1>Loading...</h1>)
+            rowData = <Spinner />
         } else {
             if (selected_player.length > 0) {
                 rowData = selected_player.map((player) => (

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { spinResult } from '../../redux/actions/players.action'
+import Spinner from '../common/Spinner.common';
 
 export class BetingTable extends Component {
 
@@ -47,7 +48,7 @@ export class BetingTable extends Component {
 
         let cardRow;
         if (selected_player === null || loading) {
-            cardRow = <h4>loading...</h4>
+            cardRow = <Spinner />
         } else {
             if (selected_player.length > 0) {
                 cardRow = selected_player.map(player => (
