@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+:root {
+  --primaryColor: rgb(49, 165, 236);
+}
+
+html {
+  height: 100%;
+}
+
+*,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(240, 241, 241);
+  font-family: 'Rubik', sans-serif;
+  height: 100%;
+}
+
+hr {
+  margin: 0;
+}
+
+.disable {
+  display: none;
+}
+
+.containerCustom {
+  padding: 35px 35px 35px 15px;
+}
+
+.home {
+  display: flex;
+}
+
+.home .selected-player {
+  flex-grow: 0.5;
+  height: 100%;
+  background-color: #e4e4e4;
+}
+.home .main {
+  flex-grow: 1;
+}
+
+.left-player {
+  padding: 0 15px 0 35px;
+}
+
+.left-player .logo {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.left-player .logo img {
+  width: 100px;
+  height: 100px;
+}
+
+.title {
+  color: var(--primaryColor);
+  font-size: 30px;
+  font-weight: 600;
+  padding: 30px 0;
+}
+
+.title-secondary {
+  font-size: 15px;
+}
+
+.player-tag {
+  position: relative;
+  display: flex;
+  margin: 10px 0;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.name p {
+  margin: 0;
+  padding-left: 10px;
+}
+
+.info,
+.win,
+.bet {
+  display: flex;
+  justify-content: space-around;
+}
+
+.info p {
+  padding: 0 3px;
+}
+
+.price {
+  position: absolute;
+  right: 0;
+  display: flex;
+}
+
+.price i {
+  margin-top: 18px;
+}
+
+.start .btn {
+  width: 100%;
+  margin: 10px 0;
+  background-color: var(--primaryColor);
+}
+
+/* All player */
+.fas {
+  color: var(--primaryColor);
+}
+
+.search .fas {
+  margin-top: 10px;
+}
+
+.search {
+  margin: 0 0 20px 0;
+}
+
+.search input {
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid var(--primaryColor);
+}
+.search input:focus {
+  box-shadow: 0 0 0 rgb(255, 255, 255);
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #1890ff;
+}
+
+.input-group {
+  width: 40%;
+}
+
+table {
+  table-layout: auto;
+  width: 100%;
+}
+
+thead tr th {
+  padding: 0 5px !important;
+}
+
+thead th > div {
+  display: flex;
+  align-items: center;
+  background-color: rgb(218, 223, 231);
+  margin: 10px 3px;
+  padding: 0 5px;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  font-size: small;
+  font-weight: 700;
+}
+p {
+  padding-left: 5px;
+  margin-top: 14px;
+}
+
+tbody tr td > div {
+  display: flex;
+  justify-content: center;
+}
+
+tbody tr td {
+  font-weight: 400;
+  text-align: center;
+}
+
+input[type='checkbox'] {
+  width: 20px; /*Desired width*/
+  height: 20px; /*Desired height*/
+}
+
+.pagination {
+  position: relative;
+}
+
+nav {
+  position: absolute;
+  right: 0;
+}
+
+.pagination p {
+  margin: 8px !important ;
+  padding: 0 !important;
+}
+
+/* betting */
+.betting {
+  position: relative;
+}
+
+.separator {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  width: 100%;
+}
+
+.line {
+  width: 100%;
+  max-width: 8.4rem;
+  height: 0.25rem;
+  background-color: #000;
+  position: relative;
+  margin: 310px 300px;
+  /* opacity: 0; */
+  /* animation: grow 2s forwards; */
+  /* animation-delay: 0.9s; */
+}
+
+.line-right::before,
+.line-left::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0.6rem solid transparent;
+  /* opacity: 0; */
+  /* animation: grow 0.5s forwards;
+  animation-delay: 1.2s; */
+}
+
+.line-right::before {
+  border-right-color: #000;
+  right: 0;
+}
+
+.line-left::before {
+  border-left-color: #000;
+  left: 0;
+}
+
+.asterisk {
+  font-size: 1.2rem;
+  color: #000;
+  margin: 0 1.6rem;
+  /* opacity: 0; */
+  /* animation: spin 0.5s forwards;
+  animation-delay: 0.7s; */
+}
+
+.dot {
+  height: 100px;
+  width: 100px;
+  background-color: rgb(37, 36, 36);
+  border-radius: 50%;
+  display: inline-block;
+  color: #e4e4e4;
+  cursor: pointer;
+}
+
+h4 {
+  font-size: 60px;
+  margin: 20px 30px;
+}
+
+.col {
+  margin: 50px 0;
+}
+
+.row {
+  position: relative;
+  margin: 0 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  border: 1px solid rgb(226, 6, 6);
+}
+
+.winner-card {
+  position: relative;
+  border: 1px solid rgb(69, 175, 7) !important;
+}
+
+.betting .top {
+  margin: 10px;
+  display: flex;
+}
+
+.betting .name {
+  margin: 0 0 0 10px;
+}
+
+.betting img {
+  width: 50px;
+  height: 50px;
+}
+
+.betting h1 {
+  font-size: 25px;
+  margin-bottom: 0;
+}
+
+.betting p {
+  padding: 0 5px;
+  font-size: 13px;
+}
+
+.betting .bet-details {
+  display: flex;
+  justify-content: space-around;
+}
+
+.betting .bet-details i {
+  margin-top: 15px;
+}
+
+.betting .win i {
+  margin-top: 15px;
+}
+
+.betting .win-stats {
+  text-align: center;
+}
+.betting .win-stats .looser {
+  margin: 0;
+  background-color: rgb(226, 6, 6);
+  color: #e4e4e4;
+}
+.betting .win-stats .winner {
+  margin: 0;
+  background-color: rgb(69, 175, 7);
+  color: #e4e4e4;
+}
+
+.nav-buttons {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 30px;
+  z-index: 1000000000;
+}
+
+.nav-buttons button {
+  width: 100px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .selected-player {
+    width: 300px;
+  }
+
+  .row {
+    margin: 0 20px;
+  }
+
+  .line {
+    margin: 310px 170px;
+    /* opacity: 0; */
+    /* animation: grow 2s forwards; */
+    /* animation-delay: 0.9s; */
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .home {
+    display: block;
+  }
+  .selected-player {
+    width: 100%;
+  }
+
+  .separator {
+    position: relative;
+    margin-top: 10px;
+  }
+
+  .line {
+    margin: 0px 0px;
+    /* opacity: 0; */
+    /* animation: grow 2s forwards; */
+    /* animation-delay: 0.9s; */
+  }
+
+  .row {
+    margin-top: 70px;
+  }
+
+  .col {
+    margin: 20px 0;
+  }
+
+  .nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 30px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .home {
+    display: block;
+  }
+
+  .row {
+    margin: 70px 40px;
+  }
+
+  .col {
+    margin: 10px 0;
+  }
+
+  .left-player {
+    padding: 0 15px 0 15px;
+  }
+}
