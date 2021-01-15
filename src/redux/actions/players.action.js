@@ -1,7 +1,7 @@
 import axios from "axios";
 import { BET_RESULT, CLEAR_PLAYERS, GET_ALL_PLAYER, LOADING, REMOVE_PLAYER, SELECT_PLAYER } from "../types.redux";
 
-import keys from '../../../config/keys.config';
+import keys from '../../config/keys.config';
 
 let awsUri = keys.AWS_URI;
 
