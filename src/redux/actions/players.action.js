@@ -1,8 +1,9 @@
 import axios from "axios";
 import { BET_RESULT, CLEAR_PLAYERS, GET_ALL_PLAYER, LOADING, REMOVE_PLAYER, SELECT_PLAYER } from "../types.redux";
 
+import keys from '../../../config/keys.config';
 
-let awsUri = "https://s3-ap-southeast-1.amazonaws.com/he-public-data/bets7747a43.json";
+let awsUri = keys.AWS_URI;
 
 function sortByProperty(prop, asc) {
     return function (a, b) {

@@ -25,4 +25,6 @@ yarn-error.log*
 
 package-lock.json
 
-.config/keys_dev.config.js
+config/keys_dev.config.js
+config.js
+/config/dev_keys.config.js
