@@ -28,3 +28,5 @@ package-lock.json
 config/keys_dev.config.js
 config.js
 /config/dev_keys.config.js
+
+yarn.lock
