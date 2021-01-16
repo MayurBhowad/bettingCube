@@ -3,7 +3,7 @@ import { BET_RESULT, CLEAR_PLAYERS, GET_ALL_PLAYER, LOADING, REMOVE_PLAYER, SELE
 
 import keys from '../../config/keys.config';
 
-let awsUri = keys.AWS_URI;
+let awsUri = 'https://s3-ap-southeast-1.amazonaws.com/he-public-data/bets7747a43.json';
 
 function sortByProperty(prop, asc) {
     return function (a, b) {
