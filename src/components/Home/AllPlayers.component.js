@@ -14,8 +14,10 @@ export class AllPlayers extends Component {
             limit: 10,
             total_page: '',
             ascending: true,
-            property: ''
+            property: '',
+            searchName: ''
         }
+        this.handleOnChange = this.handleOnChange.bind(this)
     }
 
 
@@ -24,6 +26,10 @@ export class AllPlayers extends Component {
             this.props.getAllPlayer(this.state.page, this.state.limit);
         }
 
+    }
+
+    handleOnChange(e) {
+        this.setState({ searchName: e.target.value });
     }
 
     afterData = () => {
@@ -38,7 +44,6 @@ export class AllPlayers extends Component {
     }
 
     prevPage = () => {
-        console.log('prev');
         if (this.state.page > 1) {
             this.setState({ page: this.state.page - 1 })
         }
@@ -46,7 +51,6 @@ export class AllPlayers extends Component {
     }
 
     nextPage = () => {
-        console.log('next');
         if (this.state.page < this.state.total_page) {
             this.setState({ page: this.state.page + 1 })
         }
@@ -80,8 +84,15 @@ export class AllPlayers extends Component {
         } else {
             if (players) {
                 if (players.length > 0) {
-                    players.sort(this.sortByProperty(this.state.property, this.state.ascending))
-                    let sortedPlayer = players.slice(startIndex, endIndex)
+                    let playerArr = [];
+                    players.map(player => {
+                        let name = player.Name;
+                        if (name.includes(this.state.searchName)) {
+                            playerArr.push(player)
+                        }
+                    })
+                    playerArr.sort(this.sortByProperty(this.state.property, this.state.ascending))
+                    let sortedPlayer = playerArr.slice(startIndex, endIndex)
                     playersRow = sortedPlayer.map((player) => (
                         <AllPlayerRow player={player} selectPlayer={this.props.selectPlayer} selected_player={selected_player} removePlayer={this.props.removePlayer} />
                     ))
@@ -101,7 +112,7 @@ export class AllPlayers extends Component {
                 <div className="search">
                     <div className="input-group flex-nowrap">
                         <i className="fas fa-search" aria-hidden="true"></i>
-                        <input type="text" className="form-control" placeholder="Player Name" aria-label="player_name" aria-describedby="addon-wrapping" />
+                        <input type="text" className="form-control" placeholder="Player Name" aria-label="player_name" aria-describedby="addon-wrapping" onChange={this.handleOnChange} />
                     </div>
                 </div>
                 <div className="table-responsive-md">
