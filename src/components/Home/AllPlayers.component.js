@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import _ from 'lodash';
 import { connect } from 'react-redux';
 
 import { getAllPlayer, selectPlayer, removePlayer } from '../../redux/actions/players.action';
@@ -87,7 +88,7 @@ export class AllPlayers extends Component {
                     let playerArr = [];
                     players.map(player => {
                         let name = player.Name;
-                        if (name.includes(this.state.searchName)) {
+                        if (name.includes(_.capitalize(this.state.searchName))) {
                             playerArr.push(player)
                         }
                     })
