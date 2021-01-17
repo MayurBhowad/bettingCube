@@ -71,5 +71,13 @@ yarn install
 
 #### Back-end
 
-- Express
+- Node
   - for serving reactJs build app
+
+#### Preview 01 (Home Page)
+
+![alt tag](./SS1.png)
+
+#### Preview 02 (Betting Table)
+
+![alt tag](./SS2.png)
