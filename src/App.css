@@ -29,6 +29,10 @@ hr {
   display: none;
 }
 
+.disabled-link {
+  pointer-events: none;
+}
+
 .containerCustom {
   padding: 35px 35px 35px 15px;
 }
@@ -115,6 +119,10 @@ img {
   width: 100%;
   margin: 10px 0;
   background-color: var(--primaryColor);
+}
+
+.start #betting-table {
+  width: 100%;
 }
 
 /* All player */

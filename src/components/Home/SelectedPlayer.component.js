@@ -30,8 +30,8 @@ export class SelectedPlayer extends Component {
                 </div>
                 {rowData}
                 <div className="start">
-                    <Link id="betting-table" style={{ 'textDecoration': 'none', 'color': 'white' }} to="/betting_table">
-                        <button className="btn btn-primary" disabled={selected_player.length < 9}>
+                    <Link id="betting-table" className={selected_player.length < 9 ? "disabled-link" : ""} style={{ 'textDecoration': 'none', 'color': 'white' }} to="/betting_table">
+                        <button className="btn btn-primary" for="betting-table" disabled={selected_player.length < 9}>
                             Start
                     </button>
                     </Link>
