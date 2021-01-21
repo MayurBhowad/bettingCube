@@ -86,7 +86,7 @@ function BettingPlayerCard(props) {
             <div className={`card ${player.Bet == randnumber ? "winner-card" : ""}`}>
                 <div className="top">
                     <div className="avatar">
-                        <img src="/gb.jpeg" className="card-img-top" alt="..." />
+                        <img src={player["Profile Image"]} className="card-img-top" alt="..." />
                     </div>
                     <div className="name">
                         <h1>{player.Name}</h1>
